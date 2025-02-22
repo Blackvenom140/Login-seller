@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<style>
+        body {
+            background: linear-gradient(to right, #1e3a8a, #9333ea);
+        }
+        .disabled-btn {
+            background-color: #333 !important;
+            cursor: not-allowed !important;
+        }
+</style>
+  </head>
+  <body class="text-white font-sans flex justify-center items-center min-h-screen">
+    <div class="container mx-auto p-6 sm:p-10 bg-gray-900 bg-opacity-80 rounded-xl shadow-2xl max-w-4xl">
+
+	  <!-- Prediction Section -->
+	  <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center mb-6">
+		<h2 class="text-2xl font-semibold text-yellow-400 mb-4">AI Predicted Classification</h2>
+
+		<!-- Number Input Field (Mandatory 4-digit) -->
+		<input type="number" id="userInputNumber" placeholder="Enter 4-digit number" 
+		  class="w-full px-4 py-2 mb-4 text-black rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-center"
+		  maxlength="4">
+
+		<p id="predictedClassification" class="text-2xl font-bold mt-2"></p>
+
+		<button id="startPrediction" class="mt-4 px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow-md transition-all">
+		  Start Prediction
+		</button>
+	  </div>
+
+	  <!-- Header Section -->
+	  <div class="text-center mb-8">
+		<h1 class="text-4xl sm:text-5xl font-extrabold text-green-400 mb-3">Clever AI Prediction</h1>
+		<p class="text-lg sm:text-xl opacity-75">Displaying AI Prediction Based on Issue Number Matching</p>
+	  </div>
+
+	  <!-- Table Section -->
+	  <div class="bg-gray-800 p-6 rounded-lg shadow-lg overflow-x-auto mb-6">
+		<h2 class="text-2xl font-semibold text-blue-500 mb-4">Recent Results</h2>
+		<div class="overflow-x-auto">
+		  <table class="w-full text-left table-auto min-w-[350px] border border-gray-700">
+			<thead>
+			  <tr class="bg-gray-700 text-white">
+				<th class="px-4 py-3 text-lg border border-gray-600">Issue Number</th>
+				<th class="px-4 py-3 text-lg border border-gray-600">Colour</th>
+				<th class="px-4 py-3 text-lg border border-gray-600">Number</th>
+			  </tr>
+			</thead>
+			<tbody id="recentResults">
+			  <tr class="text-gray-300">
+				<td colspan="3" class="px-4 py-4 text-center border border-gray-600">Loading...</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
+
